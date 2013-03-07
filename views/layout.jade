@@ -1,0 +1,21 @@
+!!!
+html(ng-app="ExampleApp")
+  head
+    meta(charset='utf8')
+    base(href='/')
+    title An example App with Authentification
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel='stylesheet', href='/css/app.css')
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/bootstrap-responsive.min.css')
+    <!--[if lte IE 8]>
+    script
+      // The ieshiv takes care of our ui.directives, bootstrap module directives and 
+      // AngularJS's ng-view, ng-include, ng-pluralize and ng-switch directives.
+      // However, IF you have custom directives (yours or someone else's) then
+      // enumerate the list of tags in window.myCustomTags
+      window.myCustomTags = [ 'yourDirective', 'somebodyElsesDirective' ]; // optional
+    script(src="js/angular-ui-ieshiv.js")
+    <![endif]-->
+  body
+    block body

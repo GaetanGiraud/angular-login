@@ -1,0 +1,36 @@
+extends layout
+
+block body
+  div(class='container',ng-controller='AppCtrl')
+    header(ng-switch on="loggedIn")
+      div(ng-switch-when="true")
+        ul(class = 'nav nav-tabs')
+          li
+            a(ng-href='/home') Home
+          li
+            a(ng-href='/user') My Profile  
+          li 
+            a(ng-href='/logout') logout
+      div(ng-switch-when="false")
+        ul(class = 'nav nav-tabs')
+          li
+            a(ng-click='openLoginDialog()') login
+
+    div(ng-view)
+
+    div
+      | Angular seed app: v
+      span(app-version)
+  
+  script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
+  script(src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js')
+  script(src='js/lib/angular/angular.js')
+  script(src='js/lib/angular-b/ui-bootstrap-0.2.0.min.js')
+  script(src='js/app.js')
+  script(src='js/services.js')
+  script(src='js/controllers.js')
+  script(src='js/filters.js')
+  script(src='js/directives.js')
+  script(src='js/lib/angular/angular-resource.min.js')
+  script(src='js/auth-service.js')
+

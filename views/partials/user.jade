@@ -1,0 +1,18 @@
+h3 Welcome {{user.name}} 
+
+div
+  input(type='text', ng-model = "user.name")
+  br
+  input(type='text', ng-model = "user.email")
+  br
+  ul(ng-repeat="child in user.children")
+    li 
+      input(type='text', ng-model = "child.name")
+
+
+div
+  button(type='button', ng-click="updateUser()", class='btn btn-primary') Update
+
+p
+  | Showing of 'interpolate' filter:
+  | {{ 'Current version is v%VERSION%.' | interpolate }}
