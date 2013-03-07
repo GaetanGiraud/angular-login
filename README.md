@@ -12,7 +12,7 @@ While very simple in set up, the goal is here to show a working implementation o
 
 So you need to have those installed on your machine (Angular-ui does not require any action on your side)
 
-# Directory
+##Directory
 The repository includes the following files:
 
     app.js              --> Express app
@@ -26,8 +26,9 @@ The repository includes the following files:
       images/           --> Include icons for bootstrap.
       js/
         libs/           --> Angular, Angular-bootstrap libs
-        app.js          --> Routing, global variables and $rootScope event listener (Listening to authentification requests)
-        auth-service    --> The actual authentification angular service. Uses the angular-ui bootstrap $dialog directive.
+        app.js          --> Routing, global variables and $rootScope event listener
+        auth-service    --> The actual authentification angular service. 
+                                     Uses the angular-ui bootstrap $dialog directive.
         controllers.js  --> Angular controllers.
         directives.js   --> Angular directives.
         filters.js      --> Angular filters.
@@ -51,7 +52,7 @@ The repository includes the following files:
 - Make sure that `node` and at least `mongoDB` are installed. Leave them to the default configuration.
 - Run `npm install` to install the packages. All dependencies are listed in the package.json.
 - Run `node app.js`
-- Navigate to 'localhost:3000/home'. A login modal will appear asking to login / register.
+- Navigate to `localhost:3000/home`. A login modal should appear asking to login / register.
 
 ## Redis Session Store
 Express (through Connect) comes with its own in-memory session store. 
@@ -60,11 +61,16 @@ This configuration is not to be used in production! (As Connect will remind you 
 Therefore, and because it really is not difficult to set up, the default configuration includes Redis as the default session store.
 To use the Express session store, in app.js:
 - comment:
-    app.use(express.session({ store: new RedisStore({host:'127.0.0.1', port:6379}), secret: 'secret' }));
-- uncomment:
-    //app.use(express.session({secret: 'secret'}));
 
-# Basic Auth Functionality
+      app.use(express.session({ store: new RedisStore({host:'127.0.0.1', port:6379}), secret: 'secret' }));
+      
+      
+- uncomment:
+
+      //app.use(express.session({secret: 'secret'}));
+      
+
+## Basic Auth Functionality
 
 Basic auth functionatility which are present in the app includes:
 - Authorization is managed on the Server side through sessions and a User / Password mechanisme (with salt based encryption).
