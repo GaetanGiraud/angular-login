@@ -71,7 +71,7 @@ app.get('/partials/:name', restrict, routes.partials);
 
 // Session management Routes
 
-app.get('/sessions', routes.sessions.current);
+//app.get('/sessions', routes.sessions.current);
 app.get('/sessions/ping', routes.sessions.ping);
 app.post('/sessions/new', routes.sessions.new);
 app.delete('/sessions/destroy', routes.sessions.destroy);
@@ -88,10 +88,10 @@ app.post('/api/users', api.users.add);
 */ 
 
 // user API
-app.get('/api/users', restrict, api.users.findAll);
+//app.get('/api/users', restrict, api.users.findAll);
 app.get('/api/users/:id',restrict, api.users.findById);
 app.put('/api/users/:id', restrict, api.users.update);
-app.delete('/api/users/:id', restrict, api.users.delete);
+//app.delete('/api/users/:id', restrict, api.users.delete);
 
 // redirect all others to the index (HTML5 history)
 app.get('*', routes.index);
